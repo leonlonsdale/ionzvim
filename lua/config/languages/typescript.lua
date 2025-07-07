@@ -10,15 +10,28 @@ return function()
 		includeInlayVariableTypeHintsWhenTypeMatchesName = true,
 	}
 
-	ionzvim.lsp.add_config("ts_ls", {
+	ionzvim.lsp.add_config("vtsls", {
 		settings = {
-			maxTsServerMemory = 12288,
+			complete_function_calls = true,
+			vtsls = {
+				autoUseWorkspaceTsdk = true,
+				experimental = {
+					completion = {
+						enableServerSideFuzzyMatch = true,
+					},
+				},
+			},
 			typescript = {
+				updateImportOnFileMove = { enabled = "always" },
+				suggest = {
+					completeFunctionCalls = true,
+				},
+				tsserver = {
+					maxTsServerMemory = 12288,
+				},
 				inlayHints = inlay_hints,
 			},
-			javascript = {
-				inlayHints = inlay_hints,
-			},
+			javascript = { inlayHints = inlay_hints },
 		},
 	})
 
