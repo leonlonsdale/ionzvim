@@ -18,7 +18,17 @@ return {
 
 		cmdline = {
 			keymap = { preset = "inherit" },
-			completion = { menu = { auto_show = true } },
+			completion = {
+				list = {
+					selection = {
+						preselect = false,
+						auto_insert = false,
+					},
+				},
+				menu = {
+					auto_show = true,
+				},
+			},
 		},
 
 		signature = { enabled = true },
