@@ -9,8 +9,8 @@ local api = vim.api -- Shorten vim.api to api
 -- ===========================================
 -- hides netrw
 -- ===========================================
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- ===========================================
 -- Leader Key Settings
