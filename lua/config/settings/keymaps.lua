@@ -9,6 +9,19 @@ local function map(mode, lhs, rhs, opts)
 	end
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
+-- copy / paste to / from system clipboard
+map("n", "<leader>Y", '"+y', { noremap = true, silent = true })
+map("v", "<leader>Y", '"+y', { noremap = true, silent = true })
+map("n", "<leader>P", '"+p', { noremap = true, silent = true })
+map("v", "<leader>P", '"+p', { noremap = true, silent = true })
+
+-- mirror some helix bindings
+map("n", "d", '"_dl', { noremap = true }) -- delete 1 character
+map("n", "D", '"_dd', { noremap = true }) -- delete row
+map("n", "x", "V", { noremap = true }) -- select line
+map("v", "x", "j", { noremap = true }) -- select line downwards (requires the above press first)
+map("n", "X", "V", { noremap = true }) -- select line
+map("v", "X", "j", { noremap = true }) -- select line upwards (requires the above press first)
 
 -- navigation edits
 -- Remap j and k to gj and gk in normal and visual mode
@@ -45,7 +58,6 @@ map("n", "<C-h>", "<C-w>h", { desc = "Move to the pane on the left" })
 map("n", "<C-j>", "<C-w>j", { desc = "Move to the pane below" })
 map("n", "<C-k>", "<C-w>k", { desc = "Move to the pane above" })
 map("n", "<C-l>", "<C-w>l", { desc = "Move to the pane on the right" })
-
 
 -- Snacks
 local Snacks = require("snacks")

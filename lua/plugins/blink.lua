@@ -27,7 +27,6 @@ return {
 				},
 				menu = {
 					auto_show = true,
-					border = "rounded",
 				},
 			},
 		},
