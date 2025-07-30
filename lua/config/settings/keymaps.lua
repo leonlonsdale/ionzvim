@@ -9,19 +9,21 @@ local function map(mode, lhs, rhs, opts)
 	end
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
+
+-- mirror some helix bindings
 -- copy / paste to / from system clipboard
 map("n", "<leader>Y", '"+y', { noremap = true, silent = true })
 map("v", "<leader>Y", '"+y', { noremap = true, silent = true })
 map("n", "<leader>P", '"+p', { noremap = true, silent = true })
 map("v", "<leader>P", '"+p', { noremap = true, silent = true })
-
--- mirror some helix bindings
-map("n", "d", '"_dl', { noremap = true }) -- delete 1 character
-map("n", "D", '"_dd', { noremap = true }) -- delete row
-map("n", "x", "V", { noremap = true }) -- select line
-map("v", "x", "j", { noremap = true }) -- select line downwards (requires the above press first)
-map("n", "X", "V", { noremap = true }) -- select line
-map("v", "X", "j", { noremap = true }) -- select line upwards (requires the above press first)
+-- comments
+map("n", "<leader>c", "gcc", { remap = true, desc = "Toggle line comment" })
+map("v", "<leader>c", "gc", { remap = true, desc = "Toggle line comment (visual)" })
+map("n", "<leader>C", "gbc", { remap = true, desc = "Toggle block comment" })
+map("v", "<leader>C", "gb", { remap = true, desc = "Toggle block comment (visual)" })
+-- go to end/start of line with gl
+map("n", "gl", "$", { noremap = true, desc = "Go to end of line" })
+map("n", "gs", "^", { noremap = true, desc = "Go to start of line" })
 
 -- navigation edits
 -- Remap j and k to gj and gk in normal and visual mode

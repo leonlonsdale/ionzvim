@@ -16,25 +16,36 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
+		-- {
+		-- 	"folke/tokyonight.nvim",
+		-- 	lazy = false,
+		-- 	priority = 1000,
+		-- 	config = function()
+		-- 		require("tokyonight").setup({
+		-- 			style = "storm",
+		-- 			transparent = true,
+		-- 			terminal_colors = true,
+		-- 			styles = {
+		-- 				floats = "transparent",
+		-- 				sidebars = "transparent",
+		-- 				comments = { italic = false },
+		-- 				keywords = { italic = false },
+		-- 				variables = { bold = true },
+		-- 			},
+		-- 			dim_inactive = true,
+		-- 		})
+		-- 		vim.cmd.colorscheme("tokyonight")
+		-- 	end,
+		-- },
 		{
-			"folke/tokyonight.nvim",
+			"Shatur/neovim-ayu",
 			lazy = false,
 			priority = 1000,
 			config = function()
-				require("tokyonight").setup({
-					style = "storm",
-					transparent = true,
-					terminal_colors = true,
-					styles = {
-						floats = "transparent",
-						sidebars = "transparent",
-						comments = { italic = false },
-						keywords = { italic = false },
-						variables = { bold = true },
-					},
-					dim_inactive = true,
+				require("ayu").setup({
+					mirage = true,
 				})
-				vim.cmd.colorscheme("tokyonight")
+				vim.cmd.colorscheme("ayu")
 			end,
 		},
 
