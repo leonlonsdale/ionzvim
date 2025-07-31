@@ -15,6 +15,7 @@ return function()
 
 	-- Configure golangci_lint_ls
 	ionzvim.lsp.add_config("golangci_lint_ls", {})
+	ionzvim.linters.add_linter("go", { "golangci-lint" })
 
 	-- Formatter: goimports
 	ionzvim.formatters.add_formatter("go", { "goimports" })
